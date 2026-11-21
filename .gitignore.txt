@@ -1,0 +1,18 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Archivos de compilación
+bin/
+obj/
+
+# Datos originales
+datos/*.csv
+
+# Archivos generados durante la extracción
+staging/*.json
+
+# Archivos temporales
+*.log
+*.tmp
