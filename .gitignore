@@ -361,3 +361,22 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Datos originales
+datos/*.csv
+
+# Archivos generados durante la extracción
+staging/*.json
+
+# Archivos temporales
+*.log
+*.tmp
+
+# Datos originales del proyecto
+**/datos/*.csv
+
+# Archivos generados durante la extracción
+**/staging/*.json
+
+# Archivos de configuración locales
+**/appsettings.Development.json

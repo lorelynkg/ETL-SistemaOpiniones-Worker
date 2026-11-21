@@ -26,8 +26,18 @@ namespace ETL.SistemaOpiniones.Worker.Extractors
         {
             var resultados = new List<OpinionExtraida>();
 
+            var connectionString =
+     Environment.GetEnvironmentVariable("ConnectionStrings__SistemaOpiniones")
+     ?? _options.ConnectionString;
+
+            if (string.IsNullOrWhiteSpace(connectionString))
+            {
+                throw new InvalidOperationException(
+                    "No se configuró la cadena de conexión de SistemaOpiniones.");
+            }
+
             await using var connection =
-                new SqlConnection(_options.ConnectionString);
+                new SqlConnection(connectionString);
 
             await connection.OpenAsync(cancellationToken);
 
